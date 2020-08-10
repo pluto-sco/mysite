@@ -1,0 +1,11 @@
+{% extends 'login/base.html' %}
+{% block title %}主页{% endblock %}
+{% block content %}
+    {% if request.session.is_login %}
+    <h1>{{ request.session.user_name }}, 欢迎回来</h1>
+    <h2>您的邮箱地址是：</h2>
+    <h6>{{request.session.email_user}}</h6>
+    {% else %}
+    <h1>尚未登录，无法查看内容</h1>
+    {% endif %}
+{% endblock %}
