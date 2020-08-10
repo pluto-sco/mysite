@@ -73,7 +73,7 @@ def register(request):
                     return render(request, 'login/register.html', locals())
                 same_email_user = models.User.objects.filter(email=email)
                 if same_email_user:  # 邮箱地址不唯一
-                    message = '该邮箱地址已被注册，请使用别的邮箱！'
+                    message = '该邮箱地址已被注册，请使用其他邮箱！'
                     return render(request, 'login/register.html', locals())
 
                 # 当一切都OK的情况下，创建新用户
